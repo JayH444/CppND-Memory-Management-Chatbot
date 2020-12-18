@@ -4,6 +4,8 @@
 #include <wx/bitmap.h>
 #include <string>
 
+#include <memory>
+
 class GraphNode; // forward declaration
 class ChatLogic; // forward declaration
 
@@ -29,6 +31,15 @@ public:
 
     //// STUDENT CODE
     ////
+
+    void AssignMemberVars(const ChatBot &source);  // Helper function for reducing some code repetition
+
+    ChatBot(const ChatBot &source);  // Copy Constructor
+    ChatBot& operator=(const ChatBot &source);  // Copy Assignment Operator
+    // ^^^ Return type is a reference (hence ChatBot&)
+    ChatBot(ChatBot &&source);  // Move Constructor
+    ChatBot& operator=(ChatBot &&source);  // Move Assignment Operator
+    // ^^^ Return type is a reference (hence ChatBot&)
 
     ////
     //// EOF STUDENT CODE
